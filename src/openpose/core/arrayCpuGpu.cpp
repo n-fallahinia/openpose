@@ -643,7 +643,7 @@ namespace op
         try
         {
             #if defined(USE_CAFFE) && (defined(USE_CUDA) || defined(USE_OPENCL))
-                spImpl->pCaffeBlobT->set_gpu_data(data);
+                spImpl->pCaffeBlobT->set_cpu_data(data);
             #else
                 UNUSED(data);
                 error("Required `USE_CAFFE` and `USE_CUDA` flags enabled.", __LINE__, __FUNCTION__, __FILE__);
